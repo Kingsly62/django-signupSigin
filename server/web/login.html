@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <Link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    </head>
+    <body>
+        <div class="content">
+            <div class="background">
+                <div class="form">
+                    {{alert|safe}}
+                    <h1>Sign-in</h1>
+                    <form action="" method="post" onsubmit="return login();">
+                        {% csrf_token %}
+                          {{data.as_p}}
+                        <input type="submit" value="Sign-in"><br/><br/>
+                        <a href="/register/">Sign-up</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'main.js' %}"></script>
+    </body>
+</html>
